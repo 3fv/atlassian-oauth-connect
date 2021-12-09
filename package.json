@@ -34,7 +34,8 @@
   },
   "publishConfig": {
     "access": "restricted",
-    "directory": "lib"
+    "directory": "lib",
+    "registry": "https://npm.pkg.github.com"
   },
   "scripts": {
     "build": "./scripts/build.fish",
