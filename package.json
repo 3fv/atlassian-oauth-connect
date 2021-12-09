@@ -1,0 +1,56 @@
+{
+  "name": "@3fv/atlassian-oauth-connect",
+  "description": "Atlassian Connect OAuth2 library",
+  "version": "1.0.0",
+  "author": "Jonathan Glanz <jonathan.glanz@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/3fv/atlassian-oauth-connect.git"
+  },
+  "dependencies": {
+    "atlassian-jwt": "^2.0.2",
+    "isomorphic-fetch": "^3.0.0",
+    "lodash": "^4",
+    "request": "^2.88.2",
+    "rsvp": "^4.8.4"
+  },
+  "devDependencies": {
+    "@3fv/guard": "^1.4.31",
+    "@3fv/prelude-ts": "^0.8.28",
+    "@3fv/project-config": "^1.0.6",
+    "@swc-node/jest": "^1.4.1",
+    "@types/jest": "^27.0.3",
+    "@types/nock": "^11.1.0",
+    "@types/qs": "^6.9.7",
+    "@types/request": "^2.48.7",
+    "extend": "^3.0.2",
+    "jest": "^27.4.3",
+    "mocha": "^6.0.2",
+    "moment": "^2.24.0",
+    "nock": "^10.0.6",
+    "qs": "^6.6.0",
+    "should": "^13.2.3",
+    "typescript": "^4.5.3"
+  },
+  "publishConfig": {
+    "access": "restricted",
+    "directory": "lib"
+  },
+  "scripts": {
+    "build": "./scripts/build.fish",
+    "build:watch": "yarn run build -- --watch",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "preversion": "yarn build && yarn test",
+    "postversion": "./scripts/release.sh latest",
+    "release": "yarn build  && yarn version --patch --non-interactive"
+  },
+  "license": "MIT",
+  "keywords": [
+    "atlassian",
+    "oauth"
+  ],
+  "main": "index.js",
+  "types": "index.d.ts",
+  "type": "module"
+}

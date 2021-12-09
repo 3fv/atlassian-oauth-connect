@@ -1,0 +1,29 @@
+{
+	"compilerOptions": {
+		"target": "es2017",
+		"lib": [
+			"esnext"
+		],
+		"module": "es2015",
+		"moduleResolution": "node",
+		"declaration": true,
+		"esModuleInterop": true,
+		"emitDecoratorMetadata": true,
+		"jsx": "react",
+		"skipDefaultLibCheck": true,
+		"skipLibCheck": true,
+		"experimentalDecorators": true,
+		"preserveConstEnums": true,
+		"allowSyntheticDefaultImports": true,
+		"sourceMap": true,
+		"outDir": "./lib",
+		"baseUrl": "./"
+	},
+	"compileOnSave": true,
+	"include": ["src"],
+	"exclude": [
+		"lib",
+		"node_modules"
+	]
+	
+}
