@@ -1,0 +1,1 @@
+./node_modules/@3fv/project-config/prettier/prettierrc.js

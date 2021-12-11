@@ -1,0 +1,49 @@
+<html>
+
+<head>
+  <title>Example atlassian connect app</title>
+</head>
+
+<body>
+  <a href="/auth/start">
+    Start Atlassian Example Auth
+  </a> |
+  <a href="/">
+    Reset Example
+  </a>
+  <br /><br /><br />
+  <pre id="tokenOutput"></pre>
+  <script type="text/javascript">
+    function printToken() {
+      const { search } = window.location
+      if (!search || !search.length) {
+        return
+      }
+      const params = new URLSearchParams(search)
+      if (!params.has("token")) {
+        return
+      }
+
+      let data = params.get("token")
+      const elem = document.getElementById("tokenOutput")
+
+      if (params.has("refreshToken")) {
+        data = {
+          accessToken: data,
+          refreshToken: params.get("refreshToken"),
+          expiresIn: params.get("expiresIn")
+        }
+      } else {
+        data = {
+          accessToken: data
+        }
+      }
+
+      elem.innerHTML = JSON.stringify(data, null, 2)
+    }
+
+    printToken()
+  </script>
+</body>
+
+</html>

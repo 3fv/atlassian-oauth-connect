@@ -2,9 +2,10 @@
 	"compilerOptions": {
 		"target": "es2017",
 		"lib": [
+			"DOM",
 			"esnext"
 		],
-		"module": "es2015",
+		"module": "commonjs",
 		"moduleResolution": "node",
 		"declaration": true,
 		"esModuleInterop": true,
@@ -20,7 +21,7 @@
 		"baseUrl": "./"
 	},
 	"compileOnSave": true,
-	"include": ["src"],
+	"include": ["src", "cypress/integration/01-get-token.spec.js"],
 	"exclude": [
 		"lib",
 		"node_modules"

@@ -2,6 +2,7 @@ lib
 dist
 yarn.lock
 package-lock.json
+.envrc
 
 # Created by .ignore support plugin (hsz.mobi)
 ### Node template
