@@ -31,7 +31,8 @@
         data = {
           accessToken: data,
           refreshToken: params.get("refreshToken"),
-          expiresIn: params.get("expiresIn")
+          expiresIn: params.get("expiresIn"),
+          resources: JSON.parse(params.get("resources"))
         }
       } else {
         data = {

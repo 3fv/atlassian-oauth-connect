@@ -2,6 +2,7 @@ import type { AtlassianOAuthClientConfig } from "./AtlassianOAuthTypes"
 
 export const ATLASSIAN_CONSENT_URL = "https://auth.atlassian.com/authorize",
   ATLASSIAN_CODE_EXCHANGE_URL = "https://auth.atlassian.com/oauth/token",
+  ATLASSIAN_ACCESSIBLE_RESOURCES_URL = "https://api.atlassian.com/oauth/token/accessible-resources",
   ATLASSIAN_TOKEN_URL =
     "https://oauth-2-authorization-server.services.atlassian.com"
 

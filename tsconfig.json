@@ -1,30 +1,17 @@
 {
+	"extends": "./tsconfig.base.json",
 	"compilerOptions": {
-		"target": "es2017",
-		"lib": [
-			"DOM",
-			"esnext"
-		],
-		"module": "commonjs",
-		"moduleResolution": "node",
-		"declaration": true,
-		"esModuleInterop": true,
-		"emitDecoratorMetadata": true,
-		"jsx": "react",
-		"skipDefaultLibCheck": true,
-		"skipLibCheck": true,
-		"experimentalDecorators": true,
-		"preserveConstEnums": true,
-		"allowSyntheticDefaultImports": true,
-		"sourceMap": true,
-		"outDir": "./lib",
+		"composite": true,
 		"baseUrl": "./"
 	},
-	"compileOnSave": true,
-	"include": ["src", "cypress/integration/01-get-token.spec.js"],
+	"references": [
+		{ "path": "./tsconfig.mjs.json"},
+		{ "path": "./tsconfig.cjs.json"}
+	],
+	"files": [],
+	"include": [],
 	"exclude": [
-		"lib",
-		"node_modules"
+		"**/*.*"
 	]
 	
 }

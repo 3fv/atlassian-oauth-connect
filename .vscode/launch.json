@@ -8,7 +8,7 @@
       "console": "integratedTerminal",
       "internalConsoleOptions": "neverOpen",
       "name": "example-server-nodemon",
-      "program": "${workspaceFolder}/lib/example/server.js",
+      "program": "${workspaceFolder}/lib/cjs/example/server.js",
       "request": "launch",
       "restart": true,
       "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/nodemon",

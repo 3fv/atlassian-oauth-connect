@@ -47,3 +47,11 @@ export const AtlassianDefaultHeaders = {
   "content-type": "application/json",
   accept: "application/json"
 }
+
+export interface AtlassianAccessibleResource {
+  id: string
+  name: string
+  url: string
+  scopes: AtlassianScopeKind[]
+  avatarUrl?: string
+}
