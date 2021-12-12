@@ -11,8 +11,7 @@ export interface AtlassianOAuthClientConfig {
 
 export type AtlassianOAuthOptions = Partial<AtlassianOAuthClientConfig>
 
-
-export const AtlassianOAuthGrantType ="authorization_code" 
+export const AtlassianOAuthGrantType = "authorization_code"
 
 export type AtlassianOAuthGrantType = typeof AtlassianOAuthGrantType
 
@@ -24,12 +23,11 @@ export interface AtlassianOAuthTokenData {
   token: string
   expiresIn: number
   scope: AtlassianScopeKind[]
+  decoded?: any
 }
 
-
-
 export interface AtlassianOAuthCodeToTokenRequest {
-  grant_type: AtlassianOAuthGrantType
+  grant_type?: AtlassianOAuthGrantType
   client_id: string
   client_secret: string
   code: string
@@ -54,4 +52,24 @@ export interface AtlassianAccessibleResource {
   url: string
   scopes: AtlassianScopeKind[]
   avatarUrl?: string
+}
+
+export interface AtlassianUserProfile {
+  account_type: string
+  account_id: string
+  email: string
+  name: string
+  picture: string
+  account_status: string
+  nickname: string
+  zoneinfo: string
+  locale: string
+  extended_profile?: AtlassianExtendedUserProfile
+}
+
+export interface AtlassianExtendedUserProfile {
+  job_title: string
+  organization: string
+  department: string
+  location: string
 }

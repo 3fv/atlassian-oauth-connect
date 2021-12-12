@@ -2,11 +2,20 @@ export enum OAuthStandardScope {
   offline_access = "offline_access"
 }
 
+
 export type OAuthStandardScopeKind =
   | OAuthStandardScope
   | `${OAuthStandardScope}`
 
-export enum JiraScope {
+
+
+  export enum AtlassianStandardScope {
+    READ_ME = "read:me"
+  }
+
+  export type AtlassianStandardScopeKind = AtlassianStandardScope | `${AtlassianStandardScope}`
+
+  export enum JiraScope {
   READ_JIRA_USER = "read:jira-user",
   READ_JIRA_WORK = "read:jira-work",
   WRITE_JIRA_WORK = "write:jira-work",
@@ -42,5 +51,6 @@ export type AtlassianScopeKind =
   | AtlassianDefaultScope
   | `${AtlassianDefaultScope}`
   | OAuthStandardScopeKind
+  | AtlassianStandardScopeKind
   | JiraScopeKind
   | string

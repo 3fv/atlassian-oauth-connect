@@ -32,7 +32,9 @@
           accessToken: data,
           refreshToken: params.get("refreshToken"),
           expiresIn: params.get("expiresIn"),
-          resources: JSON.parse(params.get("resources"))
+          resources: JSON.parse(params.get("resources")),
+          decoded: JSON.parse(params.get("decoded")),
+          profile: JSON.parse(params.get("profile"))
         }
       } else {
         data = {
