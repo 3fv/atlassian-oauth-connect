@@ -13,6 +13,7 @@ const indexFile = Path.resolve(
   "example",
   "index.html"
 )
+const port = 4000
 const app = express()
 const defaultClientStateId = "124352345235"
 const client = new AtlassianOAuthClient({
@@ -68,6 +69,6 @@ app.get("/", async (req: express.Request, res: express.Response) => {
   res.sendFile(indexFile)
 })
 
-app.listen(4000, () => {
-  log.info("Example server is listening")
+app.listen(port, () => {
+  log.info(`Example server is listening @ http://localhost:${port}`)
 })

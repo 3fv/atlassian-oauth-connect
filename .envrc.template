@@ -1,6 +1,11 @@
 PATH_add $PWD/node_modules/.bin
 
-export ATLASSIAN_SCOPE=<YOUR_ATLASSIAN_SCOPE>
+export ATLASSIAN_SCOPE="read:me offline_access read:jira-user read:jira-work write:jira-work \
+  manage:jira-project manage:jira-configuration manage:jira-webhook \
+  read:confluence-content.all read:confluence-content.summary write:confluence-content \
+  write:confluence-space write:confluence-file read:confluence-props write:confluence-props \
+  manage:confluence-project manage:confluence-configuration search:confluence"
+
 export ATLASSIAN_REDIRECT_URI=<YOUR_ATLASSIAN_REDIRECT_URI>
 export ATLASSIAN_CLIENT_ID=<YOUR_ATLASSIAN_CLIENT_ID>
 export ATLASSIAN_CLIENT_SECRET=<YOUR_ATLASSIAN_CLIENT_SECRET>

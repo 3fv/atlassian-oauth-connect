@@ -27,29 +27,33 @@
     "express": "^4.17.1",
     "moment": "^2.24.0",
     "nodemon": "^2.0.15",
+    "concurrently": "^6.4.0",
     "prettier": "^2.5.1",
     "tracer": "^1.1.5",
     "typescript": "^4.5.3",
-    "ts-jest":"^27.1.1",
+    "ts-jest": "^27.1.1",
+    "source-map-support": "^0.5.21",
     "jest": "^27.4.4"
   },
   "resolutions": {
     "typescript": "^4.5.3",
-    "ts-jest":"^27.1.1",
+    "ts-jest": "^27.1.1",
     "jest": "^27.4.4"
   },
   "publishConfig": {
     "access": "restricted",
-    "directory": "lib",
-    "registry": "https://npm.pkg.github.com"
+    "//registry": "https://npm.pkg.github.com"
   },
   "scripts": {
     "build": "./scripts/build.fish",
     "build:watch": "yarn run build -w",
     "build:clean": "yarn run clean && yarn run build",
     "clean": "test -d lib && rm -Rf lib; echo cleaned",
-    "test": "jest",
-    "test:watch": "jest --watch",
+    "example:server:run": "node -r source-map-support/register lib/cjs/example/server.js",
+    "example:server:start": "yarn run build && yarn run example:server:run",
+    "example:server:dev": "yarn build && concurrently 'yarn build:watch' 'nodemon -r source-map-support/register --watch lib/cjs lib/cjs/example/server.js'",
+    "//test": "jest",
+    "//test:watch": "jest --watch",
     "preversion": "yarn build && yarn test",
     "postversion": "./scripts/release.sh latest",
     "release": "yarn build  && yarn version --patch --non-interactive"
@@ -57,7 +61,12 @@
   "license": "MIT",
   "keywords": [
     "atlassian",
-    "oauth"
+    "connect",
+    "atlassian connect",
+    "forge",
+    "oauth",
+    "oauth2",
+    "3lo"
   ],
   "files": [
     "lib",
