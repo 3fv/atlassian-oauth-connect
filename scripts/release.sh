@@ -10,14 +10,12 @@ fi
 git push --tags
 echo Publishing
 
-cat package.json | jq 'del(.scripts)' > lib/package.json
-cp README.md lib/
-#cd src
-#find ./ -name "*.ts" | xargs -IsrcFile cp srcFile ../lib
-
-pushd lib
+# Publish to Github
 yarn publish . --from-package --non-interactive --tag ${NPM_VERSION}
-#cp package.json ../
-popd
-git push 
+ 
+# Publish to NPM 
+yarn publish . --from-package --non-interactive --tag ${NPM_VERSION} --registry=http://registry.npmjs.org
+
+git push --all
+
 echo "Successfully released version ${NPM_VERSION}!"
