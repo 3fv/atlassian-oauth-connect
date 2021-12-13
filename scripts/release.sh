@@ -11,7 +11,7 @@ git push --tags
 echo Publishing
 
 # Publish to Github
-yarn publish . --from-package --non-interactive --tag ${NPM_VERSION} --registry=https://npm.pkg.github.com
+# yarn publish . --from-package --non-interactive --tag ${NPM_VERSION} --registry=https://npm.pkg.github.com
  
 # Publish to NPM 
 yarn publish . --from-package --non-interactive --tag ${NPM_VERSION} --registry=http://registry.npmjs.org
