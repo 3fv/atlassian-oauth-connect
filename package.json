@@ -54,9 +54,9 @@
     "example:server:dev": "yarn build && concurrently 'yarn build:watch' 'nodemon -r source-map-support/register --watch lib/cjs lib/cjs/example/server.js'",
     "//test": "jest",
     "//test:watch": "jest --watch",
-    "preversion": "yarn build && yarn test",
+    "preversion": "yarn build",
     "postversion": "./scripts/release.sh latest",
-    "release": "yarn build  && yarn version --patch --non-interactive"
+    "release": "yarn version --patch --non-interactive"
   },
   "license": "MIT",
   "keywords": [
