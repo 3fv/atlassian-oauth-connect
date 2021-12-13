@@ -42,7 +42,7 @@
   },
   "publishConfig": {
     "access": "public",
-    "registry": "http://registry.npmjs.org"
+    "//registry": "http://registry.npmjs.org"
   },
   "scripts": {
     "build": "./scripts/build.fish",
