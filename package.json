@@ -1,7 +1,7 @@
 {
   "name": "@3fv/atlassian-oauth-connect",
   "description": "Atlassian Connect OAuth2 library",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "author": "Jonathan Glanz <jonathan.glanz@gmail.com>",
   "repository": {
     "type": "git",
