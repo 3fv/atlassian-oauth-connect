@@ -33,7 +33,8 @@
     "source-map-support": "^0.5.21",
     "tracer": "^1.1.5",
     "ts-jest": "^27.1.1",
-    "typescript": "^4.5.3"
+    "typescript": "^5.8.3",
+    "zx": "^8.1.4"
   },
   "resolutions": {
     "typescript": "^4.5.3",
@@ -42,21 +43,21 @@
   },
   "publishConfig": {
     "access": "public",
-    "registry": "http://registry.npmjs.org"
+    "registry": "https://registry.npmjs.org"
   },
   "scripts": {
-    "build": "./scripts/build.fish",
-    "build:watch": "yarn run build -w",
+    "build": "node ./scripts/build.mjs",
+    "build:watch": "run-s build:link && yarn run build --watch",
     "build:clean": "yarn run clean && yarn run build",
     "clean": "test -d lib && rm -Rf lib; echo cleaned",
     "example:server:run": "node -r source-map-support/register lib/cjs/example/server.js",
     "example:server:start": "yarn run build && yarn run example:server:run",
     "example:server:dev": "yarn build && concurrently 'yarn build:watch' 'nodemon -r source-map-support/register --watch lib/cjs lib/cjs/example/server.js'",
-    "//test": "jest",
-    "//test:watch": "jest --watch",
-    "preversion": "yarn build",
-    "postversion": "./scripts/release.sh latest",
-    "release": "yarn version --patch --non-interactive"
+    "build:link": "yarn run build && yarn unlink;yarn link",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "postversion": "node ./scripts/release.mjs latest",
+    "release": "yarn build && yarn test && yarn version --patch --non-interactive"
   },
   "license": "MIT",
   "keywords": [
